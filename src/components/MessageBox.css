@@ -1,0 +1,44 @@
+.message-box {
+  display: flex;
+  border-top: 1px solid #e3e3e3;
+  padding: 1rem;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 1rem;
+}
+
+.message-box .message-box__profile img {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+}
+
+.message-box .message-box__main {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.message-box .message-box__main textarea {
+  resize: none;
+  border: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.message-box .message-box__main textarea:focus {
+  outline: none;
+}
+
+.message-box .message-box__action-buttons .icons i {
+  margin-right: 0.4rem;
+}
+
+.message-box .message-box__action-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
