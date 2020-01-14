@@ -2,7 +2,7 @@ import React from 'react';
 
 import './MessageBox.css';
 
-function MessageBox() {
+const MessageBox = () => {
   return (
     <div className='message-box'>
       <div className='message-box__profile'>
@@ -19,6 +19,6 @@ function MessageBox() {
       </div>
     </div>
   );
-}
+};
 
 export default MessageBox;

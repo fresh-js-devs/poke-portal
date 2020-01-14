@@ -1,10 +1,16 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment, faHeart } from '@fortawesome/free-regular-svg-icons';
+import {
+  faRetweet,
+  faExternalLinkAlt,
+} from '@fortawesome/free-solid-svg-icons';
 
 import './Post.css';
 
-function Post() {
+const Post = ({ onClick }) => {
   return (
-    <div className='post'>
+    <div className='post' onClick={onClick}>
       <div className='post__profile'>
         <img
           src='https://randomuser.me/api/portraits/women/11.jpg'
@@ -24,14 +30,14 @@ function Post() {
           Blanditiis, asperiores ex.
         </div>
         <div className='post__action-buttons'>
-          <i>Comment</i>
-          <i>Retweet</i>
-          <i>Like</i>
-          <i>Share</i>
+          <FontAwesomeIcon icon={faComment} />
+          <FontAwesomeIcon icon={faRetweet} />
+          <FontAwesomeIcon icon={faHeart} />
+          <FontAwesomeIcon icon={faExternalLinkAlt} />
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default Post;

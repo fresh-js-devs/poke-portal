@@ -2,10 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  font-family: 'Montserrat' sans-serif;
+  font-family: 'Tahoma', sans-serif;
 }
 
 .container {
@@ -20,6 +17,7 @@ body {
   font-size: 1.2rem;
   padding: 1.2rem;
   background-color: #fff;
+  border-bottom: 1px solid #e3e3e3;
 }
 
 .btn-primary {
@@ -36,4 +34,10 @@ body {
 .btn-primary:hover,
 .btn-primary:active {
   background-color: #2980b9;
+}
+.go-back-icon {
+  color: #3498db;
+  margin-right: 1rem;
+  border-radius: 50%;
+  cursor: pointer;
 }
