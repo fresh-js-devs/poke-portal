@@ -1,0 +1,35 @@
+.pokemon-detail {
+  margin-top: 2rem;
+  display: flex;
+}
+
+.pokemon-detail img {
+  width: 300px;
+  height: 100%;
+}
+
+.pokemon-detail .info {
+  margin-left: 1rem;
+}
+
+.pokemon-detail .info h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.pokemon-detail .info-list {
+  margin-top: 2rem;
+}
+
+.pokemon-detail .info-list ul {
+  list-style: none;
+}
+
+.pokemon-detail .info-list ul li {
+  margin: 1rem;
+}
+
+.pokemon-detail .info-list ul li span {
+  display: block;
+  color: rgb(153, 153, 153);
+}

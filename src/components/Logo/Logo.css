@@ -1,8 +1,13 @@
 .logo {
-  position: absolute;
-  top: 0.7rem;
-  left: 15%;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #3498db;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.logo h1 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: #fccf00;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #2468b1;
 }

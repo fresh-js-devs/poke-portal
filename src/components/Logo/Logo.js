@@ -5,7 +5,7 @@ import './Logo.css';
 const Logo = ({ onClick }) => {
   return (
     <div onClick={onClick} className='logo'>
-      Tweetly
+      <h1>PokéPortal</h1>
     </div>
   );
 };
