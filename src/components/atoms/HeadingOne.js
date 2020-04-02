@@ -1,13 +1,11 @@
-.logo {
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-}
+import styled from '@emotion/styled';
 
-.logo h1 {
+const HeadingOne = styled.h1`
   font-size: 3rem;
   letter-spacing: 3px;
   color: #fccf00;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: #2468b1;
-}
+`;
+
+export default HeadingOne;

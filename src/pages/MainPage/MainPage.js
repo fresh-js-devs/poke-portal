@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import Cards from '../../components/Cards/Cards';
-import Layout from '../../components/Layout/Layout';
-import SearchBar from '../../components/SearchBar/SearchBar';
+import Cards from '../../components/organisms/Cards';
+import Layout from '../../components/organisms/Layout';
+import SearchBar from '../../components/molecules/SearchBar';
 
 const MainPage = () => {
   const [data, setData] = useState({

@@ -1,7 +1,12 @@
 import React from 'react';
+import styled from '@emotion/styled';
 import { useHistory } from 'react-router-dom';
 
-import './Cards.css';
+import CardImg from '../atoms/CardImg';
+
+const CardsWrapper = styled.div`
+  margin-top: 2rem;
+`;
 
 const Cards = ({ data }) => {
   const { push } = useHistory();
@@ -11,10 +16,10 @@ const Cards = ({ data }) => {
   };
 
   return (
-    <div className='cards'>
+    <CardsWrapper>
       {data.cards &&
         data.cards.map(card => (
-          <img
+          <CardImg
             onClick={() => handleGoToPokemonDetail(card.id)}
             className='card'
             alt={card.id}
@@ -24,7 +29,7 @@ const Cards = ({ data }) => {
             height='330'
           />
         ))}
-    </div>
+    </CardsWrapper>
   );
 };
 

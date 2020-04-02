@@ -1,7 +1,8 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-import Logo from '../Logo/Logo';
+import Logo from '../molecules/Logo';
+import Container from '../atoms/Container';
 
 const Layout = ({ children }) => {
   const { push } = useHistory();
@@ -11,10 +12,10 @@ const Layout = ({ children }) => {
   };
 
   return (
-    <div className='container'>
+    <Container>
       <Logo onClick={handleGoToHomePage} />
-      <div className='content'>{children}</div>
-    </div>
+      {children}
+    </Container>
   );
 };
 

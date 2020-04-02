@@ -1,9 +1,25 @@
 import React, { useState, useEffect } from 'react';
+import styled from '@emotion/styled';
 import axios from 'axios';
-
-import './PokemonDetail.css';
-import Layout from '../../components/Layout/Layout';
 import { useLocation } from 'react-router-dom';
+
+import Layout from '../../components/organisms/Layout';
+import Info from '../../components/atoms/Info';
+import HeadingTwo from '../../components/atoms/HeadingTwo';
+import HeadingThree from '../../components/atoms/HeadingThree';
+import List from '../../components/atoms/List';
+import ListItem from '../../components/atoms/ListItem';
+import AttackBlock from '../../components/atoms/AttackBlock';
+
+const PokemonDetailWrapper = styled.div`
+  margin-top: 2rem;
+  display: flex;
+`;
+
+const PokemonDetailImg = styled.img`
+  width: 300px;
+  height: 100%;
+`;
 
 const PokemonDetail = () => {
   const [data, setData] = useState({ cards: [] });
@@ -18,7 +34,7 @@ const PokemonDetail = () => {
       setData(result.data);
     };
     fetchData();
-  }, []);
+  }, [location.pathname]);
 
   if (!data || !data.card) {
     return (
@@ -32,40 +48,40 @@ const PokemonDetail = () => {
 
   return (
     <Layout>
-      <div className='pokemon-detail'>
-        <img src={card.imageUrlHiRes} alt={card.id} />
-        <div className='info'>
-          <h2>{card.name}</h2>
-          <span className='info-type'>
+      <PokemonDetailWrapper>
+        <PokemonDetailImg src={card.imageUrlHiRes} alt={card.id} />
+        <Info>
+          <HeadingTwo>{card.name}</HeadingTwo>
+          <>
             ({card.supertype} / {card.subtype})
-          </span>
+          </>
           {card.attacks && (
-            <div className='info-list'>
-              <h3>Attacks</h3>
-              <ul>
+            <>
+              <HeadingThree>Attacks</HeadingThree>
+              <List>
                 {card.attacks.map(attack => (
-                  <li key={attack.name}>
+                  <ListItem key={attack.name}>
                     {attack.name} (Damage: {attack.damage})
-                    {attack.text && <span>{attack.text}</span>}
-                  </li>
+                    {attack.text && <AttackBlock>{attack.text}</AttackBlock>}
+                  </ListItem>
                 ))}
-              </ul>
-            </div>
+              </List>
+            </>
           )}
           {card.weaknesses && (
-            <div className='info-list'>
-              <h3>Weaknesses</h3>
-              <ul>
+            <>
+              <HeadingThree>Weaknesses</HeadingThree>
+              <List>
                 {card.weaknesses.map(weakness => (
-                  <li key={weakness.type}>
+                  <ListItem key={weakness.type}>
                     {weakness.type} ({weakness.value})
-                  </li>
+                  </ListItem>
                 ))}
-              </ul>
-            </div>
+              </List>
+            </>
           )}
-        </div>
-      </div>
+        </Info>
+      </PokemonDetailWrapper>
     </Layout>
   );
 };
