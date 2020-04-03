@@ -10,10 +10,10 @@ const SearchBarWrapper = styled.div`
   justify-content: center;
 `;
 
-const SearchBar = () => {
+const SearchBar = ({ handleChange, pokemonName }) => {
   return (
     <SearchBarWrapper>
-      <Input type='text' />
+      <Input type='text' onChange={handleChange} value={pokemonName} />
       <Button>Search Pokémon</Button>
     </SearchBarWrapper>
   );
