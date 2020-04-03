@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import MainPage from './pages/MainPage/MainPage';
+
+import MainPage from './pages/MainPage';
 
 export default () => {
   return (
