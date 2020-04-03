@@ -17,7 +17,8 @@ const Cards = ({ data }) => {
 
   return (
     <CardsWrapper>
-      {data.cards &&
+      {data &&
+        data.cards &&
         data.cards.map(card => (
           <CardImg
             onClick={() => handleGoToPokemonDetail(card.id)}
