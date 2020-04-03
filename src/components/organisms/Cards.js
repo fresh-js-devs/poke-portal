@@ -14,7 +14,8 @@ const Cards = ({ data }) => {
   const handleGoToPokemonDetail = pokemonId => push(`/pokemon/${pokemonId}`);
 
   return (
-    <CardsWrapper>
+    //pozn. 1) id převzate z card.id 2) alt = title obrazku
+    <CardsWrapper> 
       {data.map(({ id, imageUrl }) => (
         <CardImg
           key={id}
