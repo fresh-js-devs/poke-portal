@@ -49,12 +49,21 @@ const MainPage = () => {
       return <div>{pokemonData.error}</div>;
     }
 
-    return <Cards data={pokemonData} />;
+    if (!pokemonData.cards) {
+      return <div>No pokemon found!</div>;
+    }
+
+    return <Cards data={pokemonData.cards} />;
   };
 
   return (
     <Layout>
-      <SearchBar handleChange={handleChange} pokemonName={pokemonName} />
+      <SearchBar
+        handleChange={handleChange}
+        pokemonName={pokemonName}
+        handleSearchPokemon={handleSearchPokemon}
+      />
+      {renderCards()}
     </Layout>
   );
 };

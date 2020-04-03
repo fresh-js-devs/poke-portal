@@ -8,19 +8,24 @@ const CardsWrapper = styled.div`
   margin-top: 2rem;
 `;
 
-const Cards = () => {
+const Cards = ({ data }) => {
   const { push } = useHistory();
 
   const handleGoToPokemonDetail = pokemonId => push(`/pokemon/${pokemonId}`);
 
   return (
     <CardsWrapper>
-      <CardImg
-        className='card'
-        width='240'
-        height='330'
-        onClick={() => handleGoToPokemonDetail(1)}
-      />
+      {data.map(({ id, imageUrl }) => (
+        <CardImg
+          key={id}
+          alt={id}
+          src={imageUrl}
+          className='card'
+          width='240'
+          height='330'
+          onClick={() => handleGoToPokemonDetail(id)}
+        />
+      ))}
     </CardsWrapper>
   );
 };
