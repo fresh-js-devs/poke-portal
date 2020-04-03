@@ -30,30 +30,30 @@ const MainPage = () => {
         cards,
         isLoading: false,
       });
-    } catch (error) {
-      console.log(error);
+    } catch ({ message }) {
       setPokemonData({
         ...pokemonData,
         isLoading: false,
-        error: error.message,
+        error: message,
       });
     }
   };
 
   const renderCards = () => {
-    if (pokemonData.isLoading) {
+    const { isLoading, cards, error } = pokemonData;
+    if (isLoading) {
       return <div>Loading...</div>;
     }
 
-    if (pokemonData.error) {
-      return <div>{pokemonData.error}</div>;
+    if (error) {
+      return <div>{error}</div>;
     }
 
-    if (!pokemonData.cards) {
+    if (!cards) {
       return <div>No pokemon found!</div>;
     }
 
-    return <Cards data={pokemonData.cards} />;
+    return <Cards data={pokemonData.cards} error={pokemonData.error} />;
   };
 
   return (
