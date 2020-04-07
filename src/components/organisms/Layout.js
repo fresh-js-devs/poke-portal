@@ -7,13 +7,11 @@ import Container from '../atoms/Container';
 const Layout = ({ children }) => {
   const { push } = useHistory();
 
-  const handleGoToHomePage = () => {
-    push('/');
-  };
+  const handleGoToHomepage = () => push('/');
 
   return (
     <Container>
-      <Logo onClick={handleGoToHomePage} />
+      <Logo onClick={handleGoToHomepage} />
       {children}
     </Container>
   );
